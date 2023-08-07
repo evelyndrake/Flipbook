@@ -49,7 +49,12 @@
 
 <script type="text/javascript">
 
-function load() {
+window.onload = loadApp();
+
+function loadApp() {
+
+	// Create the flipbook
+
 	$('.flipbook').turn({
 			// Width
 
@@ -74,13 +79,6 @@ function load() {
 	});
 }
 
-window.onload = function() {
-
-	load();
-
-	
-}
-
 // Load the HTML4 version if there's not CSS transform
 
 yepnope({
@@ -88,7 +86,7 @@ yepnope({
 	yep: ['lib/turn.js'],
 	nope: ['lib/turn.html4.min.js'],
 	both: ['css/basic.css'],
-	complete: load
+	complete: loadApp
 });
 
 </script>
