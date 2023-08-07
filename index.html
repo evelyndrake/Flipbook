@@ -49,8 +49,6 @@
 
 <script type="text/javascript">
 
-window.onload = loadApp();
-
 function loadApp() {
 
 	// Create the flipbook
@@ -78,6 +76,10 @@ function loadApp() {
 
 	});
 }
+
+window.onload = function() {
+	loadApp();
+};
 
 // Load the HTML4 version if there's not CSS transform
 
