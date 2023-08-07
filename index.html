@@ -52,6 +52,8 @@
 
 function loadApp() {
 
+	$('#canvas').fadeIn(1000);
+	
 	// Create the flipbook
 
 	$('.flipbook').turn({
@@ -63,6 +65,7 @@ function loadApp() {
 
 			height:600,
 
+			duration: 1000,
 			// Elevation
 
 			elevation: 50,
@@ -79,31 +82,25 @@ function loadApp() {
 
 	$(document).keydown(function(e){
 
-	var previous = 37, next = 39, esc = 27;
+		var previous = 37, next = 39, esc = 27;
 
-	switch (e.keyCode) {
-		case previous:
+		switch (e.keyCode) {
+			case previous:
 
-			// left arrow
-			$('.magazine').turn('previous');
-			e.preventDefault();
+				// left arrow
+				$('.flipbook').turn('previous');
+				e.preventDefault();
 
-		break;
-		case next:
+			break;
+			case next:
 
-			//right arrow
-			$('.magazine').turn('next');
-			e.preventDefault();
+				//right arrow
+				$('.flipbook').turn('next');
+				e.preventDefault();
 
-		break;
-		case esc:
-			
-			$('.magazine-viewport').zoom('zoomOut');	
-			e.preventDefault();
-
-		break;
-	}
-});
+			break;
+		}
+	});
 }
 window.onload = function() {
 	yepnope({
@@ -113,6 +110,11 @@ window.onload = function() {
 	both: ['css/basic.css'],
 	complete: loadApp
 });
+$(window).resize(function() {
+		resizeViewport();
+	}).bind('orientationchange', function() {
+		resizeViewport();
+	});
 };
 // Load the HTML4 version if there's not CSS transform
 
