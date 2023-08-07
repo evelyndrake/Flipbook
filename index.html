@@ -5,7 +5,7 @@
 <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-<meta name="viewport" id="canvas" content="width = 1050, user-scalable = yes" />
+<!-- <meta name="viewport" id="canvas" content="width = 1050, user-scalable = yes" /> -->
 <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
 <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
 <link rel="stylesheet" href="css/basic.css">
@@ -46,9 +46,7 @@
 		</div>
 	</div>
 </div>
-<div>
-	<p class="guide-text">Interact with the corners or use the arrow keys to change pages!</p>
-</div>
+
 
 <script type="text/javascript">
 
@@ -62,6 +60,7 @@ function loadApp() {
 			// Width
 
 			width:900,
+			pages:11,
 			
 			// Height
 
@@ -78,7 +77,7 @@ function loadApp() {
 			
 			// Auto center this flipbook
 
-			autoCenter: true
+			autoCenter: false
 
 	});
 
